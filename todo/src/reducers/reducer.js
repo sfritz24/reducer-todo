@@ -8,6 +8,11 @@ export const initialState = [{
 
 export const reducer = (state, action) =>{
     switch (action.type) {
+        case 'ADD_NEW_ITEM': 
+            return [
+                ...state,
+                action.payload
+            ];
         default:
             return state;
     };

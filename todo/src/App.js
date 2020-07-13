@@ -9,6 +9,15 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   console.log(state)
 
+  const addItem = itemName =>{
+    const newItem = {
+      task: itemName,
+      completed: false,
+      id: uuid()
+    };
+    dispatch({type: 'ADD_NEW_ITEM', payload: newItem});
+  };
+
   return (
     <div className="App">
       <Header/>
