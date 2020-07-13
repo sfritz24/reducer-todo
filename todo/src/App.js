@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState, useReducer} from 'react';
 import './App.css';
+import {initialState, reducer} from './reducers/reducer';
+import Header from './components/Header';
+import List from './components/List';
+import {v4 as uuid} from 'uuid';
 
 function App() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  console.log(state)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <List todos={state}/>
     </div>
   );
 }
