@@ -13,6 +13,18 @@ export const reducer = (state, action) =>{
                 ...state,
                 action.payload
             ];
+        case 'TOGGLE_ITEM':
+            const completed = state.map(item =>{
+                if(item.id === action.payload){
+                    return {
+                        ...item,
+                        completed: !completed
+                    };
+                } else {
+                    return item;
+                };
+            });
+            return completed;
         default:
             return state;
     };

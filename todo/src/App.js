@@ -29,6 +29,12 @@ function App() {
     setNewTask('');
   };
 
+  const toggleItem = itemId =>{
+    dispatch({type: 'TOGGLE_ITEM', payload: itemId});
+  };
+
+  
+
   return (
     <div className="App">
       <Header/>
