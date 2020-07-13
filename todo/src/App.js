@@ -33,7 +33,9 @@ function App() {
     dispatch({type: 'TOGGLE_ITEM', payload: itemId});
   };
 
-  
+  const clearCompleted = () =>{
+    dispatch({type: 'CLEAR_ITEMS'});
+  };
 
   return (
     <div className="App">
