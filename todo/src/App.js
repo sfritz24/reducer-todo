@@ -8,7 +8,6 @@ import {v4 as uuid} from 'uuid';
 function App() {
   const [newTask, setNewTask] = useState('')
   const [state, dispatch] = useReducer(reducer, initialState);
-  console.log(state)
 
   const addItem = itemName =>{
     const newItem = {
