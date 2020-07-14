@@ -1,10 +1,4 @@
-import {v4 as uuid} from 'uuid';
-
-export const initialState = [{
-    task: 'Learn about reducers',
-    completed: false,
-    id: uuid()
-}];
+export const initialState = [];
 
 export const reducer = (state, action) =>{
     switch (action.type) {
@@ -18,7 +12,7 @@ export const reducer = (state, action) =>{
                 if(item.id === action.payload){
                     return {
                         ...item,
-                        completed: !completed
+                        completed: !item.completed
                     };
                 } else {
                     return item;

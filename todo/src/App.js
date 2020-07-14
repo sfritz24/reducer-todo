@@ -39,8 +39,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header/>
-      <List todos={state}/>
+      <Header change={handleChanges} submit={handleSubmit} task={newTask}/>
+      <List todos={state} clear={clearCompleted} toggle={toggleItem}/>
     </div>
   );
 }
